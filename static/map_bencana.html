@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ac6aab6f95ceee5a8bb242a956ab9ec3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ac6aab6f95ceee5a8bb242a956ab9ec3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ac6aab6f95ceee5a8bb242a956ab9ec3 = L.map(
+                "map_ac6aab6f95ceee5a8bb242a956ab9ec3",
+                {
+                    center: [-2.5489, 118.0149],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_962030f113a7dff74235d7e70a721e99 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_962030f113a7dff74235d7e70a721e99.addTo(map_ac6aab6f95ceee5a8bb242a956ab9ec3);
+        
+    
+            var marker_cluster_f8b6e594404f792a7aa2184184cdb2f9 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_31d245a2ca4a4c8434d96331d4ede72e = L.marker(
+                [-2.4833826, 117.8902853],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_ff0ee0cc95be3c90bed727c91e27f648 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_31d245a2ca4a4c8434d96331d4ede72e.setIcon(icon_ff0ee0cc95be3c90bed727c91e27f648);
+        
+    
+        var popup_1fe45a1dcf5696b8bf1040c177bc00e9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ddc5114c90ced629b40e5f9e72e696f = $(`<div id="html_5ddc5114c90ced629b40e5f9e72e696f" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Mendes PDT: Ada 53.000 Desa di Indonesia Masuk Zona Rawan Bencana<br>             <b>Kategori:</b> Banjir<br>             <b>Lokasi:</b> Indonesia<br>             <b>Tanggal:</b> 16 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='http://regional.kompas.com/read/2024/12/16/174805578/mendes-pdt-ada-53000-desa-di-indonesia-masuk-zona-rawan-bencana' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_1fe45a1dcf5696b8bf1040c177bc00e9.setContent(html_5ddc5114c90ced629b40e5f9e72e696f);
+            
+        
+
+        marker_31d245a2ca4a4c8434d96331d4ede72e.bindPopup(popup_1fe45a1dcf5696b8bf1040c177bc00e9)
+        ;
+
+        
+    
+    
+            var marker_d58d8a78a0cf7b523e8e51a2a3a251cf = L.marker(
+                [-7.7067843, 114.0054142],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_98d02b827c616bcdaa98fdc762fae35a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d58d8a78a0cf7b523e8e51a2a3a251cf.setIcon(icon_98d02b827c616bcdaa98fdc762fae35a);
+        
+    
+        var popup_4085c569058becac18f6c72e2910cf1b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_619b4a137b59f17682217465b321e270 = $(`<div id="html_619b4a137b59f17682217465b321e270" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Bencana Hidrometrologi, Rumah di Situbondo Tertimpa Longsor<br>             <b>Kategori:</b> Tanah Longsor<br>             <b>Lokasi:</b> Situbondo<br>             <b>Tanggal:</b> 16 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='http://surabaya.kompas.com/read/2024/12/16/132115278/bencana-hidrometrologi-rumah-di-situbondo-tertimpa-longsor' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_4085c569058becac18f6c72e2910cf1b.setContent(html_619b4a137b59f17682217465b321e270);
+            
+        
+
+        marker_d58d8a78a0cf7b523e8e51a2a3a251cf.bindPopup(popup_4085c569058becac18f6c72e2910cf1b)
+        ;
+
+        
+    
+    
+            var marker_dc073caf3f6a991c6673bd0b56f939fa = L.marker(
+                [-2.4833826, 117.8902853],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_5c1079d7eeaf2a73cd2242bd0fef8ac0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_dc073caf3f6a991c6673bd0b56f939fa.setIcon(icon_5c1079d7eeaf2a73cd2242bd0fef8ac0);
+        
+    
+        var popup_ae36c1017ea6319f6c6b6a18d367dcb3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9ad0a5e9c9aad3c67e4ae0fac208c450 = $(`<div id="html_9ad0a5e9c9aad3c67e4ae0fac208c450" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Tinggal di Kawasan Padat Penduduk, Yakinkah Bangunan Sudah Tahan Gempa?<br>             <b>Kategori:</b> Gempa Bumi<br>             <b>Lokasi:</b> Indonesia<br>             <b>Tanggal:</b> 09 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='http://biz.kompas.com/read/2024/12/16/080000728/tinggal-di-kawasan-padat-penduduk-yakinkah-bangunan-sudah-tahan-gempa' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_ae36c1017ea6319f6c6b6a18d367dcb3.setContent(html_9ad0a5e9c9aad3c67e4ae0fac208c450);
+            
+        
+
+        marker_dc073caf3f6a991c6673bd0b56f939fa.bindPopup(popup_ae36c1017ea6319f6c6b6a18d367dcb3)
+        ;
+
+        
+    
+    
+            var marker_17c09075431fafad67490af1af5a711e = L.marker(
+                [-5.13504075, 119.40797112442243],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_94f1d1afad2fc4fae5f214a7cf6832c6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_17c09075431fafad67490af1af5a711e.setIcon(icon_94f1d1afad2fc4fae5f214a7cf6832c6);
+        
+    
+        var popup_7ce49c18f6000ee31a1e5e29bef3b94f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cb3ce283ab5b077ae10025823e179902 = $(`<div id="html_cb3ce283ab5b077ae10025823e179902" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Kondisi Terkini Banjir di Makassar, 4 Kecamatan Terdampak dan Waspada Pohon Tumbang<br>             <b>Kategori:</b> Banjir<br>             <b>Lokasi:</b> Kota Makassar, Sulawesi Selatan<br>             <b>Tanggal:</b> 15 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='http://makassar.kompas.com/read/2024/12/16/071724278/kondisi-terkini-banjir-di-makassar-4-kecamatan-terdampak-dan-waspada-pohon' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_7ce49c18f6000ee31a1e5e29bef3b94f.setContent(html_cb3ce283ab5b077ae10025823e179902);
+            
+        
+
+        marker_17c09075431fafad67490af1af5a711e.bindPopup(popup_7ce49c18f6000ee31a1e5e29bef3b94f)
+        ;
+
+        
+    
+    
+            var marker_817829c81518dc968b84c4cc2a79f566 = L.marker(
+                [-5.6816069, 144.2489081],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_25437666c927d0e0ff7fc0ad813b453f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_817829c81518dc968b84c4cc2a79f566.setIcon(icon_25437666c927d0e0ff7fc0ad813b453f);
+        
+    
+        var popup_9f2b2d8f4634b0d935743404256e9e08 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2825a16a527bb99f697ca67fccf0d4e2 = $(`<div id="html_2825a16a527bb99f697ca67fccf0d4e2" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> [POPULER REGIONAL] Duka Keluarga Ipda Hidayat | Bencana Tanah Bergerak di Kebumen<br>             <b>Kategori:</b> Cuaca Ekstrem<br>             <b>Lokasi:</b> Papua<br>             <b>Tanggal:</b> 14 December 2024<br>             <b>Waktu:</b> 16.00 WIB<br>             <a href='http://regional.kompas.com/read/2024/12/16/053700378/-populer-regional-duka-keluarga-ipda-hidayat-bencana-tanah-bergerak-di' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_9f2b2d8f4634b0d935743404256e9e08.setContent(html_2825a16a527bb99f697ca67fccf0d4e2);
+            
+        
+
+        marker_817829c81518dc968b84c4cc2a79f566.bindPopup(popup_9f2b2d8f4634b0d935743404256e9e08)
+        ;
+
+        
+    
+    
+            var marker_21e28d597e5c0acbad72302f105d941b = L.marker(
+                [-6.8662613, 106.8039752],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_59afcb707206d1616da7f83e38b60529 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_21e28d597e5c0acbad72302f105d941b.setIcon(icon_59afcb707206d1616da7f83e38b60529);
+        
+    
+        var popup_38af289faf7a0e3bc1970838860c4b62 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_128e56ccd3d5155eec56f26b0069c594 = $(`<div id="html_128e56ccd3d5155eec56f26b0069c594" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Menteri LH Hanif Soroti Hilangnya Tutupan Hutan sebagai Penyebab Banjir Sukabumi<br>             <b>Kategori:</b> Banjir<br>             <b>Lokasi:</b> Kabupaten Sukabumi, Jawa Barat, Sukabumi, Selatan<br>             <b>Tanggal:</b> 15 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='http://bandung.kompas.com/read/2024/12/15/183112478/menteri-lh-hanif-soroti-hilangnya-tutupan-hutan-sebagai-penyebab-banjir' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_38af289faf7a0e3bc1970838860c4b62.setContent(html_128e56ccd3d5155eec56f26b0069c594);
+            
+        
+
+        marker_21e28d597e5c0acbad72302f105d941b.bindPopup(popup_38af289faf7a0e3bc1970838860c4b62)
+        ;
+
+        
+    
+    
+            var marker_1db7ae1f562d3a02f9e3ad3d91ecf109 = L.marker(
+                [-6.9229075, 110.63509725731818],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_9069adc455c44d29104f239d4a8ba933 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1db7ae1f562d3a02f9e3ad3d91ecf109.setIcon(icon_9069adc455c44d29104f239d4a8ba933);
+        
+    
+        var popup_a7f8e7124439b095b0077586349e346e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c3ae8bf77ed7157566b3e8f23b4c2908 = $(`<div id="html_c3ae8bf77ed7157566b3e8f23b4c2908" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Cuaca Ekstrem, Demak Siaga Darurat Bencana 121 Hari<br>             <b>Kategori:</b> Banjir<br>             <b>Lokasi:</b> Kabupaten Demak, Jawa Tengah, Jateng<br>             <b>Tanggal:</b> 14 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='http://regional.kompas.com/read/2024/12/15/170035678/cuaca-ekstrem-demak-siaga-darurat-bencana-121-hari' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_a7f8e7124439b095b0077586349e346e.setContent(html_c3ae8bf77ed7157566b3e8f23b4c2908);
+            
+        
+
+        marker_1db7ae1f562d3a02f9e3ad3d91ecf109.bindPopup(popup_a7f8e7124439b095b0077586349e346e)
+        ;
+
+        
+    
+    
+            var marker_8b92f28d465a6b83fbb6f03f1f81684f = L.marker(
+                [-6.8891904, 107.6404716],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_891753b3eb74393036a50de6a45193db = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8b92f28d465a6b83fbb6f03f1f81684f.setIcon(icon_891753b3eb74393036a50de6a45193db);
+        
+    
+        var popup_f2e468481eafa3029918b2e19ae1f09f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aa79577fe1a0095903c0cedb1d14f16d = $(`<div id="html_aa79577fe1a0095903c0cedb1d14f16d" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> 13.454 Korban Banjir Sukabumi Masih Mengungsi, PJ Gubernur Ingatkan soal Logistik<br>             <b>Kategori:</b> Banjir<br>             <b>Lokasi:</b> Jabar<br>             <b>Tanggal:</b> 14 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='http://bandung.kompas.com/read/2024/12/15/130250678/13454-korban-banjir-sukabumi-masih-mengungsi-pj-gubernur-ingatkan-soal' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_f2e468481eafa3029918b2e19ae1f09f.setContent(html_aa79577fe1a0095903c0cedb1d14f16d);
+            
+        
+
+        marker_8b92f28d465a6b83fbb6f03f1f81684f.bindPopup(popup_f2e468481eafa3029918b2e19ae1f09f)
+        ;
+
+        
+    
+    
+            var marker_6b4b355f595dbe26e0b22d38e5e5168b = L.marker(
+                [-6.8891904, 107.6404716],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_fcde458d03cd54cb6f3977fd17dfae3e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6b4b355f595dbe26e0b22d38e5e5168b.setIcon(icon_fcde458d03cd54cb6f3977fd17dfae3e);
+        
+    
+        var popup_84d943394c60c4c121bd1be3ef017a08 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_891abc70b07e961ed6ebcbe8f443c2f5 = $(`<div id="html_891abc70b07e961ed6ebcbe8f443c2f5" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Alih Fungsi Lahan Diduga Sebabkan Banjir Sukabumi, Pj Gubernur Jabar Siap Evaluasi Izin<br>             <b>Kategori:</b> Banjir<br>             <b>Lokasi:</b> Jabar<br>             <b>Tanggal:</b> 15 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='http://bandung.kompas.com/read/2024/12/15/113852378/alih-fungsi-lahan-diduga-sebabkan-banjir-sukabumi-pj-gubernur-jabar-siap' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_84d943394c60c4c121bd1be3ef017a08.setContent(html_891abc70b07e961ed6ebcbe8f443c2f5);
+            
+        
+
+        marker_6b4b355f595dbe26e0b22d38e5e5168b.bindPopup(popup_84d943394c60c4c121bd1be3ef017a08)
+        ;
+
+        
+    
+    
+            var marker_84414199b7def349009dc226ba97f998 = L.marker(
+                [-7.0542441, 107.06914276067964],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_781e4664154b5a94ba5e0cedda977fd5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_84414199b7def349009dc226ba97f998.setIcon(icon_781e4664154b5a94ba5e0cedda977fd5);
+        
+    
+        var popup_78e488edab9ce9e012b97daa7d2ce865 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_82a7ae8c4b0448b05f195eb649b9c4dd = $(`<div id="html_82a7ae8c4b0448b05f195eb649b9c4dd" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Bantuan Logistik Bencana Hidrometeorologi Cianjur Terkendala Armada<br>             <b>Kategori:</b> Banjir<br>             <b>Lokasi:</b> Kabupaten Cianjur, Jawa Barat<br>             <b>Tanggal:</b> 14 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='http://bandung.kompas.com/read/2024/12/14/210455878/bantuan-logistik-bencana-hidrometeorologi-cianjur-terkendala-armada' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_78e488edab9ce9e012b97daa7d2ce865.setContent(html_82a7ae8c4b0448b05f195eb649b9c4dd);
+            
+        
+
+        marker_84414199b7def349009dc226ba97f998.bindPopup(popup_78e488edab9ce9e012b97daa7d2ce865)
+        ;
+
+        
+    
+    
+            var marker_6fff788f9c50380a31de04401da72d28 = L.marker(
+                [0.30407597559487853, 101.03858329123655],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_7a1c1e7bc319bb33f20c57515409f74f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6fff788f9c50380a31de04401da72d28.setIcon(icon_7a1c1e7bc319bb33f20c57515409f74f);
+        
+    
+        var popup_0da91eb31e7f8ce3e91d73a0b2756023 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b47e6ae4dcfbec43ff4248027a6fab1f = $(`<div id="html_b47e6ae4dcfbec43ff4248027a6fab1f" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Menteri PU Siapkan 440 Alat Berat Antisipasi Banjir-Longsor saat Libur Nataru<br>             <b>Kategori:</b> Banjir<br>             <b>Lokasi:</b> Indonesia, Sumatera, Papua<br>             <b>Tanggal:</b> 16 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='https://finance.detik.com/infrastruktur/d-7689647/menteri-pu-siapkan-440-alat-berat-antisipasi-banjir-longsor-saat-libur-nataru' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_0da91eb31e7f8ce3e91d73a0b2756023.setContent(html_b47e6ae4dcfbec43ff4248027a6fab1f);
+            
+        
+
+        marker_6fff788f9c50380a31de04401da72d28.bindPopup(popup_0da91eb31e7f8ce3e91d73a0b2756023)
+        ;
+
+        
+    
+    
+            var marker_fd8479dadea339eca29ce514c51f3149 = L.marker(
+                [-7.1229318500000005, 112.32819354965417],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_3a5399c51474f7362c7d0452022da50f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_fd8479dadea339eca29ce514c51f3149.setIcon(icon_3a5399c51474f7362c7d0452022da50f);
+        
+    
+        var popup_3fe14a7ddbbb8044dfee0009e8c23c0a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b8d5fd16c06cf8848fa112b9ba9823bd = $(`<div id="html_b8d5fd16c06cf8848fa112b9ba9823bd" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Polres Lamongan Pantau Debit Air Bengawan Solo Antisipasi Banjir<br>             <b>Kategori:</b> Banjir<br>             <b>Lokasi:</b> Lamongan<br>             <b>Tanggal:</b> 16 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='https://www.detik.com/jatim/berita/d-7688386/polres-lamongan-pantau-debit-air-bengawan-solo-antisipasi-banjir' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_3fe14a7ddbbb8044dfee0009e8c23c0a.setContent(html_b8d5fd16c06cf8848fa112b9ba9823bd);
+            
+        
+
+        marker_fd8479dadea339eca29ce514c51f3149.bindPopup(popup_3fe14a7ddbbb8044dfee0009e8c23c0a)
+        ;
+
+        
+    
+    
+            var marker_935f25cf691bcd63eb47efba312f1646 = L.marker(
+                [-4.836529049999999, 119.54753078410127],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_071dcbee52c4d1229e29d3ed1b3917e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_935f25cf691bcd63eb47efba312f1646.setIcon(icon_071dcbee52c4d1229e29d3ed1b3917e7);
+        
+    
+        var popup_92266e9e90b2594fc3fbbdb70b0410ed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4caf55b6a552e15869f346694dfc268d = $(`<div id="html_4caf55b6a552e15869f346694dfc268d" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Video: Penampakan Rumah Warga Pangkep Rusak Diterjang Angin Puting Beliung<br>             <b>Kategori:</b> Puting Beliung<br>             <b>Lokasi:</b> Kabupaten Pangkep, Sulawesi Selatan<br>             <b>Tanggal:</b> 15 December<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='https://news.detik.com/detiktv/d-7687933/video-penampakan-rumah-warga-pangkep-rusak-diterjang-angin-puting-beliung' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_92266e9e90b2594fc3fbbdb70b0410ed.setContent(html_4caf55b6a552e15869f346694dfc268d);
+            
+        
+
+        marker_935f25cf691bcd63eb47efba312f1646.bindPopup(popup_92266e9e90b2594fc3fbbdb70b0410ed)
+        ;
+
+        
+    
+    
+            var marker_4c22e949afeb6a65ef2b452a9aa1248a = L.marker(
+                [-6.9199289, 106.9265095],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_698e8ade370cf7e142d75db2f74ace1f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4c22e949afeb6a65ef2b452a9aa1248a.setIcon(icon_698e8ade370cf7e142d75db2f74ace1f);
+        
+    
+        var popup_3d2f1e9bcd81b5dbdaeeb889c3b253e4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_947565678cbc5092e621452e403f6abe = $(`<div id="html_947565678cbc5092e621452e403f6abe" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Tambang Disebut Biang Kerok Banjir Sukabumi, Ini Kata Saan Mustopa<br>             <b>Kategori:</b> Banjir<br>             <b>Lokasi:</b> Sukabumi<br>             <b>Tanggal:</b> 14 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='https://www.detik.com/jabar/berita/d-7686453/tambang-disebut-biang-kerok-banjir-sukabumi-ini-kata-saan-mustopa' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_3d2f1e9bcd81b5dbdaeeb889c3b253e4.setContent(html_947565678cbc5092e621452e403f6abe);
+            
+        
+
+        marker_4c22e949afeb6a65ef2b452a9aa1248a.bindPopup(popup_3d2f1e9bcd81b5dbdaeeb889c3b253e4)
+        ;
+
+        
+    
+    
+            var marker_1244e14e6db4092519ec39d889b8ebc3 = L.marker(
+                [-6.26289085, 106.88222894692834],
+                {
+}
+            ).addTo(marker_cluster_f8b6e594404f792a7aa2184184cdb2f9);
+        
+    
+            var icon_6351d47d70f05fd7c1464eb9fbdf7094 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1244e14e6db4092519ec39d889b8ebc3.setIcon(icon_6351d47d70f05fd7c1464eb9fbdf7094);
+        
+    
+        var popup_4a30c5db1f98e4e21b49d2241ce168f3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_596dfdf56b4d7aecad740ac4a9f3a983 = $(`<div id="html_596dfdf56b4d7aecad740ac4a9f3a983" style="width: 100.0%; height: 100.0%;">             <b>Judul:</b> Cuaca Hari Ini Selasa 17 Desember 2024: Siang Jabodetabek Seluruhnya Akan Hujan Ringan<br>             <b>Kategori:</b> Banjir<br>             <b>Lokasi:</b> Jakarta, Jakarta<br>             <b>Tanggal:</b> 17 December 2024<br>             <b>Waktu:</b> Tidak ada dalam artikel<br>             <a href='https://www.liputan6.com/news/read/5836986/cuaca-hari-ini-selasa-17-desember-2024-siang-jabodetabek-seluruhnya-akan-hujan-ringan' target='_blank'>Baca Selengkapnya</a>             </div>`)[0];
+                popup_4a30c5db1f98e4e21b49d2241ce168f3.setContent(html_596dfdf56b4d7aecad740ac4a9f3a983);
+            
+        
+
+        marker_1244e14e6db4092519ec39d889b8ebc3.bindPopup(popup_4a30c5db1f98e4e21b49d2241ce168f3)
+        ;
+
+        
+    
+    
+            marker_cluster_f8b6e594404f792a7aa2184184cdb2f9.addTo(map_ac6aab6f95ceee5a8bb242a956ab9ec3);
+        
+</script>
+</html>

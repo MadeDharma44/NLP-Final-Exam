@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NER Analysis</title>
+</head>
+<body>
+    <h1>Hasil Analisis NLP</h1>
+    <ul>
+        {% for disaster in disasters %}
+        <li>
+            <h2>{{ disaster.Title }}</h2>
+            <p><strong>Category:</strong> {{ disaster.Category }}</p>
+            <p><strong>Locations:</strong> {{ ', '.join(disaster.NER_Results.locations) if disaster.NER_Results.locations else 'N/A' }}</p>
+            <p><strong>Dates:</strong> {{ ', '.join(disaster.NER_Results.dates) if disaster.NER_Results.dates else 'N/A' }}</p>
+            <p><strong>Times:</strong> {{ ', '.join(disaster.NER_Results.times) if disaster.NER_Results.times else 'N/A' }}</p>
+            <p><strong>Organizations:</strong> {{ ', '.join(disaster.NER_Results.organizations) if disaster.NER_Results.organizations else 'N/A' }}</p>
+            <p><strong>Quantities:</strong> {{ ', '.join(disaster.NER_Results.quantities) if disaster.NER_Results.quantities else 'N/A' }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hasil NER - Scraped Articles</title>
+</head>
+<body>
+    <h1>Hasil Ekstraksi Entitas Lokasi, Tanggal, dan Waktu</h1>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Dampak</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in articles %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ article['Title'] }}</td>
+                <td>{{ article['Category'] }}</td>
+                <td>{{ article['Location'] }}</td>
+                <td>{{ article['Date'] }}</td>
+                <td>{{ article['Dampak'] }}</td>
+                <td><a href="{{ article['URL'] }}" target="_blank">Link</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

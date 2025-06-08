@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Bencana Indonesia</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* General Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: url('https://source.unsplash.com/1600x900/?disaster') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .hero-section .content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin: 0;
+            color: #f8f9fa;
+        }
+        .hero-section h1 span {
+            color: #ffc107;
+        }
+        .hero-section .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffc107;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .hero-section .btn:hover {
+            background-color: #e0a800;
+        }
+
+        /* Tab Navigation */
+        .tab-container {
+            margin: 20px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: flex-start;
+            border-bottom: 2px solid #ddd;
+        }
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+        .tab-button.active, .tab-button:hover {
+            border-bottom: 3px solid #ffc107;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #ffc107;
+            color: black;
+        }
+        table td {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section" style="background-image: url('{{ url_for('static', filename='image/1.png') }}'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center; color: #ffffff; text-align: center;">
+        <div class="content" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px;">
+            <h1 style="font-size: 48px; margin-bottom: 20px;">Informasi<br>Bencana<br><span style="color: #f39c12;">Indonesia</span></h1>
+            <form action="{{ url_for('process') }}" method="post">
+                <button type="submit" class="btn" style="padding: 10px 20px; font-size: 18px; border: none; border-radius: 5px; background-color: #f39c12; color: #ffffff; cursor: pointer;">
+                    Mulai Sekarang
+                </button>
+            </form>
+            <form action="{{ url_for('map') }}" method="get">
+                <button type="submit" class="btn" style="margin-top: 10px; padding: 10px 20px; font-size: 18px; border: none; border-radius: 5px; background-color: #28a745; color: #ffffff; cursor: pointer;">
+                    Lihat Peta Bencana
+                </button>
+            </form>
+            
+        </div>
+    </div>
+
+
+
+    <!-- Tab Navigation -->
+    <div class="tab-container">
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'home')">Home</button>
+            <button class="tab-button" onclick="openTab(event, 'ner-results')">Hasil Ekstraksi</button>
+        </div>
+
+        <!-- Home Tab -->
+        <div id="home" class="tab-content active">
+            <h2>Selamat Datang di Informasi Bencana Indonesia</h2>
+            <p>Platform ini membantu Anda mendapatkan informasi bencana terkini dan mengetahui lokasi, tanggal, dan waktu dari laporan bencana</p>
+            <p>Klik tombol <b>"Mulai Sekarang"</b> untuk memproses data dan melihat hasilnya.</p>
+        </div>
+
+        <!-- NER Results Tab -->
+        <div id="ner-results" class="tab-content">
+            <h2>Hasil Ekstraksi</h2>
+            {% if data %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Judul</th>
+                        <th>Kategori</th>
+                        <th>Lokasi</th>
+                        <th>Tanggal</th>
+                        <th>Waktu</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data %}
+                    <tr>
+                        <td>{{ item.Title }}</td>
+                        <td>{{ item.Category }}</td>
+                        <td>{{ item.Location }}</td>
+                        <td>{{ item.Date }}</td>
+                        <td>{{ item.Time }}</td>
+                        <td><a href="{{ item.URL }}" target="_blank">Baca</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>Belum ada data yang diproses. Klik "Mulai Sekarang" untuk memulai pemrosesan.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- JavaScript for Tabs -->
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+
+            // Sembunyikan semua tab
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            // Nonaktifkan semua tombol tab
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+
+            // Tampilkan tab aktif
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
